@@ -4,13 +4,8 @@ import { FrontpageComponent } from 'src/app/components/frontpage/frontpage.compo
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: FrontpageComponent
-  },
-  {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    component: FrontpageComponent
   },
 ];
 
