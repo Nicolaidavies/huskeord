@@ -1,17 +1,23 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>HJV Huskeord</ion-title>
+<!--    <ion-buttons slot="end" collapse="true">-->
+<!--      <ion-button [routerLink]="['/settings']">-->
+<!--        <ion-icon slot="icon-only" name="cog-outline"></ion-icon>-->
+<!--      </ion-button>-->
+<!--    </ion-buttons>-->
   </ion-toolbar>
 </ion-header>
+
 <ion-content fullscreen="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">HJV Huskeord</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<!--  <ion-header>-->
+<!--    <ion-toolbar>-->
+<!--      <ion-searchbar></ion-searchbar>-->
+<!--    </ion-toolbar>-->
+<!--  </ion-header>-->
 
   <ng-container *ngFor="let definition of definitions">
-    <ion-card >
+    <ion-card>
       <ion-card-header>
         <ion-card-subtitle>{{definition.description}}</ion-card-subtitle>
         <ion-card-title>{{definition.title}}</ion-card-title>
@@ -23,5 +29,9 @@
       </ion-card-content>
     </ion-card>
   </ng-container>
+
+  <p style="text-align: center;">
+    <a target="_blank" href="https://nicolai.io">Lavet af Nicolai Davies</a>
+  </p>
 
 </ion-content>
