@@ -1,23 +1,23 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>HJV Huskeord</ion-title>
-<!--    <ion-buttons slot="end" collapse="true">-->
-<!--      <ion-button [routerLink]="['/settings']">-->
-<!--        <ion-icon slot="icon-only" name="cog-outline"></ion-icon>-->
-<!--      </ion-button>-->
-<!--    </ion-buttons>-->
+    <ion-buttons *ngIf="false" slot="end" collapse="true">
+      <ion-button (click)="showSettingsModal()">
+        <ion-icon slot="icon-only" name="cog"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen="true">
-<!--  <ion-header>-->
-<!--    <ion-toolbar>-->
-<!--      <ion-searchbar></ion-searchbar>-->
-<!--    </ion-toolbar>-->
-<!--  </ion-header>-->
+  <ion-header>
+    <ion-toolbar>
+      <ion-searchbar [ngModel]="searchText$ | async" (ngModelChange)="searchText$.next($event)"></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
 
-  <ng-container *ngFor="let definition of definitions">
-    <ion-card>
+  <ng-container *ngIf="definitions$ | async as definitions">
+    <ion-card *ngFor="let definition of definitions">
       <ion-card-header>
         <ion-card-subtitle>{{definition.description}}</ion-card-subtitle>
         <ion-card-title>{{definition.title}}</ion-card-title>
@@ -28,6 +28,8 @@
         </ul>
       </ion-card-content>
     </ion-card>
+
+    <p class="no-results" *ngIf="!definitions.length">Ingen resultater</p>
   </ng-container>
 
   <p style="text-align: center;">
