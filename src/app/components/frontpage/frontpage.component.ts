@@ -30,14 +30,19 @@ export class FrontpageComponent implements OnInit {
   }
 
   async showSettingsModal() {
-    // Reset search
-    this.definitionsService.search('');
+    this.resetSearchText();
 
     const modal = await this.modalController.create({
       component: SettingsComponent,
     });
 
     await modal.present();
+  }
+
+  resetSearchText() {
+    // Reset search
+    this.definitionsService.search('');
+    this.searchText$.next('');
   }
 
 }
