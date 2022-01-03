@@ -11,8 +11,6 @@ export interface Definition {
   providedIn: 'root'
 })
 export class DefinitionsService {
-  private storageKey = 'ORDER';
-
   public definitions: Definition[] = [
     {
       id: 1,
@@ -174,8 +172,44 @@ export class DefinitionsService {
         '<b>I</b>dentifikation',
         '<b>K</b>endeord',
       ]
-    },
+    }
   ];
+  public order: number[];
 
-  constructor() { }
+  private storageKey = 'ORDER';
+
+  constructor() {
+    this.order = this.getOrder();
+    this.addNewDefinitionsToOrder();
+  }
+
+  public changeOrder(from: number, to: number) {
+    this.order.splice(to, 0, this.order.splice(from, 1)[0]);
+    this.setOrder(this.order);
+  }
+
+  private getOrder(): number[] {
+    const saved = localStorage.getItem(this.storageKey);
+    const defaultOrder = this.definitions.map(d => d.id);
+    try {
+      const parsed = JSON.parse(saved) as number[];
+      if (!parsed) {
+        return defaultOrder;
+      }
+      return parsed;
+    } catch (e) {
+     return defaultOrder;
+    }
+  }
+
+  private setOrder(order: number[]) {
+    localStorage.setItem(this.storageKey, JSON.stringify(this.order));
+  }
+
+  // If we decide to add more definitions later, we'll add their ids to the order
+  private addNewDefinitionsToOrder() {
+    const missingDefinitions = this.definitions.filter(d => !this.order.includes(d.id));
+    missingDefinitions.forEach(d => this.order.push(d.id));
+    this.setOrder(this.order);
+  }
 }

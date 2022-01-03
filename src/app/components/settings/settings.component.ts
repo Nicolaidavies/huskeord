@@ -18,7 +18,7 @@ export class SettingsComponent implements OnInit {
 
   constructor(
     private modalController: ModalController,
-    private definitionsService: DefinitionsService,
+    public definitionsService: DefinitionsService,
   ) { }
 
   ngOnInit() {
@@ -30,6 +30,8 @@ export class SettingsComponent implements OnInit {
     // The `from` and `to` properties contain the index of the item
     // when the drag started and ended, respectively
     console.log('Dragged from index', ev.detail.from, 'to', ev.detail.to);
+
+    this.definitionsService.changeOrder(ev.detail.from, ev.detail.to);
 
     // Finish the reorder and position the item in the DOM based on
     // where the gesture ended. This method can also be called directly
