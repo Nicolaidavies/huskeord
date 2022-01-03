@@ -8,5 +8,14 @@
 </ion-header>
 
 <ion-content>
-  <p>Indstillinger</p>
+  <ion-reorder-group (ionItemReorder)="doReorder($event)" disabled="false">
+
+    <ion-item *ngFor="let definition of definitions$ | async">
+      <ion-label>
+        {{definition.title}} - {{definition.description}}
+      </ion-label>
+      <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+
+  </ion-reorder-group>
 </ion-content>

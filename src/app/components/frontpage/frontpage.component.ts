@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ModalController} from "@ionic/angular";
-import {SettingsComponent} from "../settings/settings.component";
-import {Definition, definitions} from "../../definitions";
-import {BehaviorSubject, Observable} from "rxjs";
-import {map} from "rxjs/operators";
+import {ModalController} from '@ionic/angular';
+import {SettingsComponent} from '../settings/settings.component';
+import {Definition, DefinitionsService} from '../../services/definitions.service';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 import FuzzySearch from 'fuzzy-search';
 
 @Component({
@@ -17,17 +17,20 @@ export class FrontpageComponent implements OnInit {
 
   public searchText$ = new BehaviorSubject('');
 
-  constructor(private modalController: ModalController) { }
+  constructor(
+    private modalController: ModalController,
+    private definitionsService: DefinitionsService,
+  ) { }
 
   ngOnInit() {
-    const searcher = new FuzzySearch(definitions, ['title', 'description', 'fullText'], {
+    const searcher = new FuzzySearch(this.definitionsService.definitions, ['title', 'description', 'fullText'], {
       caseSensitive: false,
     });
 
     this.definitions$ = this.searchText$.pipe(
       map(s => {
         if (!s) {
-          return definitions;
+          return this.definitionsService.definitions;
         }
 
         return searcher.search(s);
