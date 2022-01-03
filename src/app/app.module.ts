@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FrontpageComponent } from 'src/app/components/frontpage/frontpage.component';
 import {SettingsComponent} from "./components/settings/settings.component";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,13 @@ import {SettingsComponent} from "./components/settings/settings.component";
         BrowserModule,
         IonicModule.forRoot(),
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+          enabled: environment.production,
+          // Register the ServiceWorker as soon as the app is stable
+          // or after 30 seconds (whichever comes first).
+          registrationStrategy: 'registerWhenStable:30000'
+        })
     ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
