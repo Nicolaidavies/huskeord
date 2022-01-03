@@ -12,7 +12,7 @@
 <ion-content fullscreen="true">
   <ion-header>
     <ion-toolbar>
-      <ion-searchbar [ngModel]="searchText$ | async" (ngModelChange)="searchText$.next($event)"></ion-searchbar>
+      <ion-searchbar placeholder="Søg" [ngModel]="searchText$ | async" (ngModelChange)="searchText$.next($event)"></ion-searchbar>
     </ion-toolbar>
   </ion-header>
 
