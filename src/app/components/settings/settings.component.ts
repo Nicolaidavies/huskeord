@@ -22,15 +22,13 @@ export class SettingsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.definitions$ = of(this.definitionsService.definitions);
+    this.definitions$ = this.definitionsService.definitions$;
   }
 
 
   doReorder(ev: CustomEvent<ItemReorderEventDetail>) {
     // The `from` and `to` properties contain the index of the item
     // when the drag started and ended, respectively
-    console.log('Dragged from index', ev.detail.from, 'to', ev.detail.to);
-
     this.definitionsService.changeOrder(ev.detail.from, ev.detail.to);
 
     // Finish the reorder and position the item in the DOM based on

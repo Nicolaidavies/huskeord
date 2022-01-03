@@ -23,19 +23,21 @@ export class FrontpageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const searcher = new FuzzySearch(this.definitionsService.definitions, ['title', 'description', 'fullText'], {
-      caseSensitive: false,
-    });
+    this.definitions$ = this.definitionsService.definitions$;
 
-    this.definitions$ = this.searchText$.pipe(
-      map(s => {
-        if (!s) {
-          return this.definitionsService.definitions;
-        }
-
-        return searcher.search(s);
-      })
-    );
+    // const searcher = new FuzzySearch(this.definitionsService.definitions$.value, ['title', 'description', 'fullText'], {
+    //   caseSensitive: false,
+    // });
+    //
+    // this.definitions$ = this.searchText$.pipe(
+    //   map(s => {
+    //     if (!s) {
+    //       return this.definitionsService.definitions$.value;
+    //     }
+    //
+    //     return searcher.search(s);
+    //   })
+    // );
   }
 
   async showSettingsModal() {

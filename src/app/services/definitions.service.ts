@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {BehaviorSubject} from "rxjs";
 
 export interface Definition {
   id: number;
@@ -11,7 +12,7 @@ export interface Definition {
   providedIn: 'root'
 })
 export class DefinitionsService {
-  public definitions: Definition[] = [
+  private definitions: Definition[] = [
     {
       id: 1,
       title: 'FALKUSE',
@@ -174,6 +175,7 @@ export class DefinitionsService {
       ]
     }
   ];
+  public definitions$ = new BehaviorSubject<Definition[]>([]);
   public order: number[];
 
   private storageKey = 'ORDER';
@@ -181,11 +183,18 @@ export class DefinitionsService {
   constructor() {
     this.order = this.getOrder();
     this.addNewDefinitionsToOrder();
+    this.orderDefinitions();
   }
 
   public changeOrder(from: number, to: number) {
     this.order.splice(to, 0, this.order.splice(from, 1)[0]);
     this.setOrder(this.order);
+    this.orderDefinitions();
+  }
+
+  private orderDefinitions() {
+    const definitions = this.order.map(i => this.definitions.find(d => d.id === i));
+    this.definitions$.next(definitions);
   }
 
   private getOrder(): number[] {
