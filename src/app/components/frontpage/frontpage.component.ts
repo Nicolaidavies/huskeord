@@ -3,8 +3,8 @@ import {ModalController} from '@ionic/angular';
 import {SettingsComponent} from '../settings/settings.component';
 import {Definition, DefinitionsService} from '../../services/definitions.service';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
-import FuzzySearch from 'fuzzy-search';
+import {map, tap} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-frontpage',
@@ -24,23 +24,15 @@ export class FrontpageComponent implements OnInit {
 
   ngOnInit() {
     this.definitions$ = this.definitionsService.definitions$;
-
-    // const searcher = new FuzzySearch(this.definitionsService.definitions$.value, ['title', 'description', 'fullText'], {
-    //   caseSensitive: false,
-    // });
-    //
-    // this.definitions$ = this.searchText$.pipe(
-    //   map(s => {
-    //     if (!s) {
-    //       return this.definitionsService.definitions$.value;
-    //     }
-    //
-    //     return searcher.search(s);
-    //   })
-    // );
+    this.searchText$.subscribe(s => {
+      this.definitionsService.search(s);
+    });
   }
 
   async showSettingsModal() {
+    // Reset search
+    this.definitionsService.search('');
+
     const modal = await this.modalController.create({
       component: SettingsComponent,
     });

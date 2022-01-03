@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject} from 'rxjs';
+import FuzzySearch from 'fuzzy-search';
 
 export interface Definition {
   id: number;
   title: string;
   description: string;
   fullText: string[];
+}
+
+export interface Searcher<T> {
+  search(s: string): T[];
 }
 
 @Injectable({
@@ -175,26 +180,40 @@ export class DefinitionsService {
       ]
     }
   ];
-  public definitions$ = new BehaviorSubject<Definition[]>([]);
-  public order: number[];
-
   private storageKey = 'ORDER';
+  private searcher: Searcher<Definition>;
+  private order: number[];
+
+  public definitions$ = new BehaviorSubject<Definition[]>([]);
 
   constructor() {
     this.order = this.getOrder();
     this.addNewDefinitionsToOrder();
-    this.orderDefinitions();
+    this.definitions$.next(this.getOrderedDefinitions());
+
+    this.searcher = new FuzzySearch(this.definitions, ['title', 'description', 'fullText'], {
+      caseSensitive: false,
+    });
+  }
+
+  public search(searchText: string) {
+    if (!searchText) {
+      this.definitions$.next(this.getOrderedDefinitions());
+      return;
+    }
+
+    const result = this.searcher.search(searchText);
+    this.definitions$.next(result);
   }
 
   public changeOrder(from: number, to: number) {
     this.order.splice(to, 0, this.order.splice(from, 1)[0]);
     this.setOrder(this.order);
-    this.orderDefinitions();
+    this.definitions$.next(this.getOrderedDefinitions());
   }
 
-  private orderDefinitions() {
-    const definitions = this.order.map(i => this.definitions.find(d => d.id === i));
-    this.definitions$.next(definitions);
+  private getOrderedDefinitions(): Definition[] {
+    return this.order.map(i => this.definitions.find(d => d.id === i));
   }
 
   private getOrder(): number[] {
@@ -212,7 +231,7 @@ export class DefinitionsService {
   }
 
   private setOrder(order: number[]) {
-    localStorage.setItem(this.storageKey, JSON.stringify(this.order));
+    localStorage.setItem(this.storageKey, JSON.stringify(order));
   }
 
   // If we decide to add more definitions later, we'll add their ids to the order
