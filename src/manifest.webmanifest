@@ -1,7 +1,7 @@
 {
   "name": "HJV Huskeord",
   "short_name": "Huskeord",
-  "theme_color": "#1976d2",
+  "theme_color": "#fafafa",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
