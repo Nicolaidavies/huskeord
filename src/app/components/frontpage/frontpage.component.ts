@@ -3,7 +3,6 @@ import {ModalController} from '@ionic/angular';
 import {SettingsComponent} from '../settings/settings.component';
 import {Definition, DefinitionsService} from '../../services/definitions.service';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {map, tap} from 'rxjs/operators';
 
 
 @Component({
