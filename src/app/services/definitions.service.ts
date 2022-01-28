@@ -17,6 +17,8 @@ export interface Searcher<T> {
   providedIn: 'root'
 })
 export class DefinitionsService {
+  public definitions$ = new BehaviorSubject<Definition[]>([]);
+
   private definitions: Definition[] = [
     {
       id: 1,
@@ -178,13 +180,24 @@ export class DefinitionsService {
         '<b>I</b>dentifikation',
         '<b>K</b>endeord',
       ]
+    },
+    {
+      id: 14,
+      title: 'MIFSREK',
+      description: 'Angreb',
+      fullText: [
+        '<b>M</b>ål',
+        '<b>I</b>ndbrud',
+        '<b>F</b>Formation',
+        '<b>S</b>tøtte',
+        '<b>RE</b>organisering',
+        '<b>K</b>larmeldinger',
+      ]
     }
   ];
   private storageKey = 'ORDER';
   private searcher: Searcher<Definition>;
   private order: number[];
-
-  public definitions$ = new BehaviorSubject<Definition[]>([]);
 
   constructor() {
     this.order = this.getOrder();
