@@ -49,7 +49,7 @@ export class DefinitionsService {
     {
       id: 3,
       title: 'VAMUK',
-      description: 'Efter angreb',
+      description: 'Genordning',
       fullText: [
         '<b>V</b>åben',
         '<b>A</b>mmunition',
@@ -61,7 +61,7 @@ export class DefinitionsService {
     {
       id: 4,
       title: 'FADSUM',
-      description: 'Optælling efter kamp',
+      description: 'Status melding, typisk efter kamp',
       fullText: [
         '<b>F</b>anger',
         '<b>A</b>mmunition',
@@ -74,7 +74,7 @@ export class DefinitionsService {
     {
       id: 5,
       title: 'VOVS',
-      description: 'Iværksættelse af ildkamp',
+      description: 'Ildoverfaldsmåde',
       fullText: [
         '<b>V</b>elovervejet',
         '<b>O</b>verraskende',
@@ -85,7 +85,7 @@ export class DefinitionsService {
     {
       id: 6,
       title: 'FSDOT',
-      description: 'Enkeltmandens stillingsindtagelse',
+      description: 'Prioriteret liste til enkeltmandens stillingsindtagelse',
       fullText: [
         '<b>F</b>rit skud',
         '<b>S</b>kjul og sløring',
@@ -96,15 +96,17 @@ export class DefinitionsService {
     },
     {
       id: 7,
-      title: 'BASKON',
-      description: 'Skyttens sammenstød med fjenden',
+      title: 'KANÆVEJFOSKI',
+      description: 'Delings stillingsskifte',
       fullText: [
-        '<b>B</b>eskyd',
-        '<b>A</b>fsøg',
-        '<b>S</b>ikre',
-        '<b>K</b>ontrollere',
-        '<b>O</b>rientering',
-        '<b>N</b>y stilling',
+        '<b>K</b>ommando til ildens ophør',
+        '<b>A</b>vertissement',
+        '<b>NÆ</b>ste stilling',
+        '<b>VEJ</b>en dertil',
+        '<b>FO</b>rmation',
+        '<b>S</b>tøtte',
+        '<b>K</b>larmelding',
+        '<b>I</b>værksættelse',
       ]
     },
     {
@@ -122,7 +124,7 @@ export class DefinitionsService {
     {
       id: 9,
       title: 'AMAIFOKI',
-      description: 'Gruppens stillingsindtagelse',
+      description: 'Samlet ildoverfald',
       fullText: [
         '<b>A</b>vertissement (advarsel)',
         '<b>M</b>ål',
@@ -149,7 +151,7 @@ export class DefinitionsService {
     {
       id: 11,
       title: 'KANÆFOSKI',
-      description: 'Delingens stillingsskifte',
+      description: 'Gruppens stillingsskifte',
       fullText: [
         '<b>K</b>ommando til ildens ophør',
         '<b>A</b>vertissement',
@@ -184,7 +186,7 @@ export class DefinitionsService {
     {
       id: 14,
       title: 'MIFSREK',
-      description: 'Angreb',
+      description: 'Gruppens/delingens storm',
       fullText: [
         '<b>M</b>ål',
         '<b>I</b>ndbrud',
@@ -222,7 +224,7 @@ export class DefinitionsService {
     {
       id: 17,
       title: 'OPTISIMU',
-      description: 'Hvordan gruppeføreren laver overvejelser',
+      description: 'Gruppeførerens overvejelser',
       fullText: [
         '<b>OP</b>gave',
         '<b>TI</b>d',
