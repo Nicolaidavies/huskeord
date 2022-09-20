@@ -11,3 +11,11 @@ ion-toolbar.sc-ion-searchbar-ios-h, ion-toolbar .sc-ion-searchbar-ios-h {
   text-align: center;
   padding: 2em;
 }
+
+@media screen and (min-width: 900px) {
+  ion-card {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
