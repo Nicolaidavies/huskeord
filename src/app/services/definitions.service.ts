@@ -254,7 +254,7 @@ export class DefinitionsService {
       ]
     },
     {
-      id: 19,
+      id: 20,
       title: 'LARS',
       description: 'Melding for trukket artilleri, morterer og raketkastere',
       fullText: [
@@ -265,7 +265,7 @@ export class DefinitionsService {
       ]
     },
     {
-      id: 19,
+      id: 21,
       title: 'KROSUS',
       description: 'Melding for helikoptere',
       fullText: [
@@ -277,7 +277,7 @@ export class DefinitionsService {
       ]
     },
     {
-      id: 20,
+      id: 22,
       title: 'A-H',
       description: 'Personbeskrivelse (NATO standard)',
       fullText: [
