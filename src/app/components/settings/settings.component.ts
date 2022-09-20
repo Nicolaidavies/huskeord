@@ -26,15 +26,16 @@ export class SettingsComponent implements OnInit {
   }
 
 
-  doReorder(ev: CustomEvent<ItemReorderEventDetail>) {
+  doReorder(ev: Event) {
+    const detail = (ev as any).detail as ItemReorderEventDetail;
     // The `from` and `to` properties contain the index of the item
     // when the drag started and ended, respectively
-    this.definitionsService.changeOrder(ev.detail.from, ev.detail.to);
+    this.definitionsService.changeOrder(detail.from, detail.to);
 
     // Finish the reorder and position the item in the DOM based on
     // where the gesture ended. This method can also be called directly
     // by the reorder group
-    ev.detail.complete();
+    detail.complete();
   }
 
   dismiss() {
