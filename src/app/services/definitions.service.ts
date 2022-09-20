@@ -193,6 +193,103 @@ export class DefinitionsService {
         '<b>RE</b>organisering',
         '<b>K</b>larmeldinger',
       ]
+    },
+    {
+      id: 15,
+      title: 'AVUBBE',
+      description: 'Håndtering af krigsfanger',
+      fullText: [
+        '<b>A</b>fvæbne',
+        '<b>V</b>isitere',
+        '<b>U</b>dspørge',
+        '<b>B</b>evogte',
+        '<b>B</b>eskytte',
+        '<b>E</b>vakuere',
+      ]
+    },
+    {
+      id: 16,
+      title: 'NOSKA',
+      description: 'Gruppeførerens vurdering af terræn',
+      fullText: [
+        '<b>N</b>øgleområder',
+        '<b>O</b>bservations- og ildafgivelsesområder',
+        '<b>S</b>kjul, sløring og dækning',
+        '<b>K</b>øretøjs- og personelhindringer',
+        '<b>A</b>dgangsveje for køretøj',
+      ]
+    },
+    {
+      id: 17,
+      title: 'OPTISIMU',
+      description: 'Hvordan gruppeføreren laver overvejelser',
+      fullText: [
+        '<b>OP</b>gave',
+        '<b>TI</b>d',
+        '<b>SI</b>tuation',
+        '<b>MU</b>ligheder',
+      ]
+    },
+    {
+      id: 18,
+      title: 'UNDTÅBS',
+      description: 'Melding for pansrede køretøjer',
+      fullText: [
+        '<b>UND</b>ervogn',
+        '<b>TÅ</b>rn',
+        '<b>B</b>evæbning',
+        '<b>S</b>ærlige kendetegn',
+      ]
+    },
+    {
+      id: 19,
+      title: 'SCRIM',
+      description: 'Melding for civile køretøjer (NATO standard)',
+      fullText: [
+        '<b>S</b>hape (form/type: pick-up, minibus mm.)',
+        '<b>C</b>olor',
+        '<b>R</b>egistration',
+        '<b>I</b>dentification mark (særlige kendetegn, f.eks. firmalogo)',
+        '<b>M</b>odel',
+      ]
+    },
+    {
+      id: 19,
+      title: 'LARS',
+      description: 'Melding for trukket artilleri, morterer og raketkastere',
+      fullText: [
+        '<b>L</b>avet (pjecens undervogn, f.eks. 1-akslet med lave ben)',
+        '<b>A</b>rmering (bevæbning, f.eks. kort kanon med mundingsbremse)',
+        '<b>R</b>ekylsystem (f.eks. over og under kanon)',
+        '<b>S</b>kjold (beskyttelsesskjold på pjecen)',
+      ]
+    },
+    {
+      id: 19,
+      title: 'KROSUS',
+      description: 'Melding for helikoptere',
+      fullText: [
+        '<b>KR</b>oppen',
+        '<b>RO</b>torer',
+        '<b>S</b>tabilisatorer',
+        '<b>U</b>nderstel',
+        '<b>S</b>ærlige kendetegn',
+      ]
+    },
+    {
+      id: 20,
+      title: 'A-H',
+      description: 'Personbeskrivelse (NATO standard)',
+      fullText: [
+        '<b>A</b>ge',
+        '<b>B</b>uild (kropsbygning)',
+        '<b>C</b>olour (hudfarve)',
+        '<b>D</b>istinguishing marks',
+        '<b>E</b>levation (højde)',
+        '<b>F</b>ace',
+        '<b>G</b>ait (gang, haltende, oprejst)',
+        '<b>H</b>air',
+      ]
     }
   ];
   private storageKey = 'ORDER';
