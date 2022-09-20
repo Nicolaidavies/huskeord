@@ -5,8 +5,8 @@
   "theme_color": "#f4f5f8",
   "background_color": "#f4f5f8",
   "display": "standalone",
-  "scope": "./",
-  "start_url": "./",
+  "scope": "https://huskeord.nicolai.io",
+  "start_url": "https://huskeord.nicolai.io",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
