@@ -292,6 +292,18 @@ export class DefinitionsService {
         '<b>G</b>ait (gang, haltende, oprejst)',
         '<b>H</b>air',
       ]
+    },
+    {
+      id: 23,
+      title: 'SMASH',
+      description: 'Postinstruks',
+      fullText: [
+        '<b>S</b>e/lytte',
+        '<b>M</b>elde',
+        '<b>A</b>larmere',
+        '<b>S</b>lås',
+        '<b>H</b>olde forbindelse',
+      ]
     }
   ];
   private storageKey = 'ORDER';
