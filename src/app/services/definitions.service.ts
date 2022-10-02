@@ -304,7 +304,28 @@ export class DefinitionsService {
         '<b>S</b>lås',
         '<b>H</b>olde forbindelse',
       ]
-    }
+    },
+    {
+      id: 24,
+      title: 'RAM',
+      description: 'Måludpegning, se også RAOFORM',
+      fullText: [
+        '<b>R</b>etning',
+        '<b>A</b>fstand',
+        '<b>M</b>ål',
+      ]
+    },
+    {
+      id: 25,
+      title: 'MAFOI',
+      description: 'Samlet ildoverfald, se også AMAIFOKI',
+      fullText: [
+        '<b>M</b>ål',
+        '<b>A</b>fstand',
+        '<b>FO</b>rmation',
+        '<b>I</b>ldmåde',
+      ]
+    },
   ];
   private storageKey = 'ORDER';
   private searcher: Searcher<Definition>;
