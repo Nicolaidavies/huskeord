@@ -326,6 +326,18 @@ export class DefinitionsService {
         '<b>I</b>ldmåde',
       ]
     },
+    {
+       id: 26,
+       title: 'BASKON',
+       description: 'Skyttens sammenstød med fjenden',
+       fullText: [
+        '<b>B</b>eskyd',
+        '<b>A</b>fsøg',
+        '<b>S</b>ikre',
+        '<b>K</b>ontrollere',
+        '<b>O</b>rientering',
+        '<b>N</b>y stilling',
+       ]
   ];
   private storageKey = 'ORDER';
   private searcher: Searcher<Definition>;
