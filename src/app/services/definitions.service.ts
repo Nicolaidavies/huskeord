@@ -338,6 +338,7 @@ export class DefinitionsService {
         '<b>O</b>rientering',
         '<b>N</b>y stilling',
        ]
+    }
   ];
   private storageKey = 'ORDER';
   private searcher: Searcher<Definition>;
