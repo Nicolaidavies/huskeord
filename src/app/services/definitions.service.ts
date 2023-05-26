@@ -338,6 +338,18 @@ export class DefinitionsService {
         '<b>O</b>rientering',
         '<b>N</b>y stilling',
        ]
+    },
+    {
+       id: 27,
+       title: 'ORBBK',
+       description: 'Fører værktøj',
+       fullText: [
+        '<b>O</b>verveje',
+        '<b>R</b>ECCE',
+        '<b>B</b>eslutte',
+        '<b>B</b>efale',
+        '<b>K</b>ontrollere',
+       ]
     }
   ];
   private storageKey = 'ORDER';
