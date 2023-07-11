@@ -234,7 +234,7 @@ export class DefinitionsService {
     },
     {
       id: 18,
-      title: 'WHATs',
+      title: 'WHATS',
       description: 'Melding for pansrede køretøjer (NATO standard)',
       fullText: [
         '<b>W</b>heels (Hjul)',
