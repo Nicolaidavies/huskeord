@@ -234,13 +234,14 @@ export class DefinitionsService {
     },
     {
       id: 18,
-      title: 'UNDTÅBS',
-      description: 'Melding for pansrede køretøjer',
+      title: 'WHATs',
+      description: 'Melding for pansrede køretøjer (NATO standard)',
       fullText: [
-        '<b>UND</b>ervogn',
-        '<b>TÅ</b>rn',
-        '<b>B</b>evæbning',
-        '<b>S</b>ærlige kendetegn',
+        '<b>W</b>heels (Hjul)',
+        '<b>H</b>ull (Skrog)',
+        '<b>A</b>rmament (bevæbning)',
+        '<b>T</b>urret (Tårn)',
+        '<b>S</b>pecial features (Særlige kendetegn)',
       ]
     },
     {
