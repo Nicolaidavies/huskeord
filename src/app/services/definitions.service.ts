@@ -351,6 +351,29 @@ export class DefinitionsService {
         '<b>B</b>efale',
         '<b>K</b>ontrollere',
        ]
+    },
+    {
+       id: 28,
+       title: 'RAMS',
+       description: 'Nyt mål / næste mål',
+       fullText: [
+        '<b>R</b>etning (højre/venstre/fjernere/nærmere)',
+        '<b>A</b>fstand (i hele og halve mål)',
+        '<b>M</b>ål',
+        '<b>S</b>kudkommando (støt/skyd/sikre)'
+       ]
+    },
+    {
+       id: 29,
+       title: 'GGÅFA',
+       description: 'Sigte med LMG',
+       fullText: [
+        '<b>G</b>rundret',
+        '<b>G</b>rovretning',
+        '<b>Å</b>ndedræt',
+        '<b>F</b>inret',
+        '<b>A</b>ftræk'
+       ]
     }
   ];
   private storageKey = 'ORDER';
