@@ -374,6 +374,24 @@ export class DefinitionsService {
         '<b>F</b>inret',
         '<b>A</b>ftræk'
        ]
+    },
+    {
+       id: 30,
+       title: 'SIMUMFAHROF',
+       description: 'March',
+       fullText: [
+        '<b>S</b>tartsted',
+        '<b>I</b>ndrykkepunkt',
+        '<b>M</b>archvej',
+        '<b>U</b>drykkepunkt',
+        '<b>M</b>archmål',
+        '<b>F</b>ormation',
+        '<b>A</b>fstand',
+        '<b>H</b>astighed',
+        '<b>R</b>egulering af marchen',
+        '<b>O</b>pgave under/efter march',
+        '<b>F</b>ælles bestemmelser'
+       ]
     }
   ];
   private storageKey = 'ORDER';
