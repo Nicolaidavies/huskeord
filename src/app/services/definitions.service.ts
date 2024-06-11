@@ -392,6 +392,24 @@ export class DefinitionsService {
         '<b>O</b>pgave under/efter march',
         '<b>F</b>ælles bestemmelser'
        ]
+    },
+    {
+       id: 31,
+       title: 'MOTØKBOS-FME',
+       description: 'Operationens grundprincipper for kompagnichefen',
+       fullText: [
+        '<b>M</b>ål',
+        '<b>O</b>pgave',
+        '<b>T</b>yngde',
+        '<b>ØK</b>onomi med kræfterne',
+        '<b>B</b>evægelse',
+        '<b>O</b>verraskelse',
+        '<b>S</b>ikring',
+        '<b>-</b>',
+        '<b>F</b>leksibilitet',
+        '<b>M</b>oral',
+        '<b>E</b>tik'
+       ]
     }
   ];
   private storageKey = 'ORDER';
